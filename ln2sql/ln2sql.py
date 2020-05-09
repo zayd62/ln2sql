@@ -55,7 +55,7 @@ class Ln2sql:
 
         for query in queries:
             full_query += str(query)
-            print(query)
+            # print(query)
 
         return full_query
 
