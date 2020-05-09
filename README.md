@@ -1,3 +1,16 @@
+# Parsing natural language queries
+
+from the root of this repository, run the following command:
+
+```bash
+python3 -m ln2sql.demo.example
+```
+
+To run the natural language query to SQL query interactive demo and follow the on screen instructions
+
+Below is the readme of the original repository
+
+---
 # ln2sql
 
 <b>ln2sql is a NLP tool to query a database in natural language.</b> The tool takes in input a database model and a sentence and translate the latter in a valid SQL statement able to query the input data model.
