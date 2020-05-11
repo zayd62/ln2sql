@@ -3,10 +3,10 @@
 from the root of this repository, run the following command:
 
 ```bash
-python3 -m ln2sql.demo.example
+python -m ln2sql.demo.interactive
 ```
 
-To run the natural language query to SQL query interactive demo and follow the on screen instructions
+To run the natural language query to SQL query interactive demo and follow the on screen instructions. Tested on **Python 3.7.7** 
 
 Below is the readme of the original repository
 
