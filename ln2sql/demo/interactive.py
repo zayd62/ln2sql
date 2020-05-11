@@ -5,15 +5,6 @@ from ..ln2sql import Ln2sql
 from .CLITable import Table
 from .utils import cstring
 
-# data = []
-# data.append(["one", "1"])
-# data.append(["two", "2"])
-# data.append(["this is a really long cell. this cell should take up more than a single of a vscode terminal on my external monitor. okay, i have run out of things to write so now i am writing some filler content",
-#              "we are now in the second cell. just like the first cell, this cell should overflow into another line as this cell is longer than the widht of my external monitor in a vscode terminal. once again, i am writing some filler content and now i am finished :)"])
-
-# table = Table(data, Table.column_width(3), True)
-# print(table)
-
 
 def calculate_query(nlq):
     db_path = "database_store/products.sql"

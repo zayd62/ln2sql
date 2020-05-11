@@ -1,6 +1,20 @@
 # Parsing natural language queries
 
-from the root of this repository, run the following command:
+## interactive demo
+
+
+### Hard coded variables
+
+the following variables need to be changed before running otherwise it will not work
+
+
+#### ln2sql/demo/interactive.py
+
+| line number | variable name | What it should change to                                                                                      |
+|-------------|---------------|---------------------------------------------------------------------------------------------------------------|
+| 36          | db_pth        | it should point to the test dataset. Availabe in the repository [here](https://github.com/zayd62/final-year-project) and the file is called `dataset.sqlite3` |
+|             |               |                                                                                                               |
+AFter modifying the paths, from the root of this repository, run the following command:
 
 ```bash
 python -m ln2sql.demo.interactive
