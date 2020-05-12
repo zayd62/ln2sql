@@ -6,9 +6,9 @@ question id,author questions,author sql,generated sql,correct prediction
 5,show me all the products where the price is less than 1,SELECT * FROM products WHERE price < 1,SELECT * FROM products WHERE products.price < '1',True
 6,show me all the products that has a price more than 1,SELECT * FROM products WHERE price > 1,SELECT * FROM products WHERE products.price > '1',True
 7,show me all the products where the price is between 1 and 2,SELECT * FROM products WHERE price > 1 AND price < 2,SELECT * FROM products WHERE products.price BETWEEN OOV AND 'between',False
-8,show me all the products where the price is less than 1 or the price is greater than 2,SELECT * FROM products WHERE price < 1 OR price > 2,SELECT * FROM products WHERE products.price < '1' OR products.price > '2',True
+8,show me all the products where the price is less than 1 or greater than 2,SELECT * FROM products WHERE price < 1 OR price > 2,SELECT * FROM products WHERE products.price < '2',False
 9,show me the brand and itemname from products,"SELECT brand, itemname FROM products","SELECT products.brand, products.itemname FROM products",True
-10,show me the brand and itemnae from products in the crisps category and the price is greater than 1,"SELECT brand, itemname FROM products WHERE category = ""Crisps"" AND price > 1",SELECT products.brand FROM products WHERE products.category = '1' AND products.price > OOV,False
+10,show me the brand and itemname from products in the crisps category where the price is greater than 1,"SELECT brand, itemname FROM products WHERE category = ""Crisps"" AND price > 1","SELECT products.brand, products.itemname FROM products WHERE products.category = '1' AND products.price > OOV",False
 11,show me the maximum price of products,SELECT MAX(price) FROM products,SELECT MAX(products.price) FROM products,True
 12,show me the minimum price of products,SELECT MIN(price) FROM products,SELECT MIN(products.price) FROM products,True
 13,show me the average price of the products,SELECT AVG(price) FROM products,SELECT AVG(products.price) FROM products,True
