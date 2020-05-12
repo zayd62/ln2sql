@@ -5,6 +5,17 @@ from ..ln2sql import Ln2sql
 from .CLITable import Table
 from .utils import cstring
 
+# ensures number between a certain range
+
+
+def clamp(n, min, max):
+    if n < min:
+        return min
+    elif n > max:
+        return max
+    else:
+        return n
+
 
 def calculate_query(nlq):
     db_path = "database_store/products.sql"
@@ -16,7 +27,6 @@ def calculate_query(nlq):
         thesaurus_path=None,
         stopwords_path=None,
     )
-    
     query = ln2sql.get_query(nlq)
     cleaned_query = query.replace("\n", " ").rstrip(" ").lstrip(" ")
     return cleaned_query
@@ -51,20 +61,21 @@ def print_sql_query(query):
         print(cstring("Note that only the first 10 rows are shown", fg='c', style='b') + '\n')
 
 
-while True:
-    ask_prompt = "Please ask a question: "
-    question = input(cstring(ask_prompt, fg='b', style='b'))
-    try:
-        generated_query = calculate_query(question)
-    except Exception as identifier:
-        print(cstring("Failed to generate a query", fg='r', style='b') + "\n")
-        continue
+if __name__ == "__main__":
+    while True:
+        ask_prompt = "Please ask a question: "
+        question = input(cstring(ask_prompt, fg='b', style='b'))
+        try:
+            generated_query = calculate_query(question)
+        except Exception:
+            print(cstring("Failed to generate a query", fg='r', style='b') + "\n")
+            continue
 
-    result_prompt = "The caluclated query is: "
-    print(cstring(result_prompt, fg='y', style='b') + generated_query)
+        result_prompt = "The caluclated query is: "
+        print(cstring(result_prompt, fg='y', style='b') + generated_query)
 
-    query_execution_prompt = "Executing the query returns"
-    print(cstring(query_execution_prompt, fg='g', style='bu') + "\n")
-    time.sleep(0.15*len(generated_query))
+        query_execution_prompt = "Executing the query returns"
+        print(cstring(query_execution_prompt, fg='g', style='bu') + "\n")
+        time.sleep(clamp(0.15*len(generated_query), 0, 3))
 
-    print_sql_query(generated_query)
+        print_sql_query(generated_query)

@@ -10,17 +10,40 @@ the following variables need to be changed before running otherwise it will not 
 
 #### ln2sql/demo/interactive.py
 
-| line number | variable name | What it should change to                                                                                      |
-|-------------|---------------|---------------------------------------------------------------------------------------------------------------|
-| 36          | db_pth        | it should point to the test dataset. Availabe in the repository [here](https://github.com/zayd62/final-year-project) and the file is called `dataset.sqlite3` |
-|             |               |                                                                                                               |
-AFter modifying the paths, from the root of this repository, run the following command:
+| line number | variable name | What it should change to                                                                                                                                      |
+| ----------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 37          | db_pth        | it should point to the test dataset. Available in the repository [here](https://github.com/zayd62/final-year-project) and the file is called `dataset.sqlite3` |
+
+
+#### ln2sql/demo/test_dataset_explicit.py
+
+| line number | variable name | What it should change to    |
+| ----------- | ------------- | --------------------------- |
+| 9           | db_pth        | it should point to the test dataset. Available in the repository [here](https://github.com/zayd62/final-year-project) and the file is called `dataset.sqlite3`|
+
+#### ln2sql/demo/test_dataset_generic.py
+
+| line number | variable name | What it should change to    |
+| ----------- | ------------- | --------------------------- |
+| 9           | db_pth        | it should point to the test dataset. Available in the repository [here](https://github.com/zayd62/final-year-project) and the file is called `dataset.sqlite3`|
+
+
+After modifying the paths, from the root of this repository, run the following command:
 
 ```bash
 python -m ln2sql.demo.interactive
 ```
 
 To run the natural language query to SQL query interactive demo and follow the on screen instructions. Tested on **Python 3.7.7** 
+
+To run the tests run from the root
+
+```bash
+python -m ln2sql.demo.test_dataset_explicit
+python -m ln2sql.demo.test_dataset_generic
+```
+
+the path to the results should be displayed in the terminal for explicit and generic dataset
 
 Below is the readme of the original repository
 

@@ -68,7 +68,7 @@ class Table:
 
     @staticmethod
     def column_width(num_of_columns):
-        return (shutil.get_terminal_size().columns//num_of_columns) - 1
+        return (shutil.get_terminal_size().columns//num_of_columns) - 3
 
     def __str__(self):
 
@@ -76,3 +76,5 @@ class Table:
             return self.withTextWrap()
         else:
             return self.withoutTextWrap()
+
+
